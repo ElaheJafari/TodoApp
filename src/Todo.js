@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css"
 
  export default function Todo(props){
     const [isOpen , setisOpen] = React.useState(false);
@@ -10,16 +11,16 @@ import React from "react";
                         <div>
                             {props.status === "" ? (
                                 <>
-                                    <button onClick={props.Togle.bind(null, { ...props, status: "Confirm" })}>Confirm</button>
-                                    <button onClick={props.Togle.bind(null, { ...props, status: "Cancel" })}>Cancel</button>
+                                    <button className="togle" onClick={props.Togle.bind(null, { ...props, status: "Confirm" })}>Confirm</button>
+                                    <button className="togle" onClick={props.Togle.bind(null, { ...props, status: "Cancel" })}>Cancel</button>
                                 </>
                             ):props.status}
                         </div>
                         <button onClick={props.edditeTodo.bind(null, props)}>Edit</button>
                         <button onClick={props.deleteTodo.bind(null, props)}>Delete</button>
-                        <button onClick={()=>{
+                        <button className="Des" onClick={()=>{
                             setisOpen(!isOpen)
-                        }}>Des</button>
+                        }}>More</button>
                     </div>
         </>
     )

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import Todo from "./Todo";
+import "./App.css"
 
 export default function App() {
     const [Data, setData] = React.useState([]);
@@ -58,8 +59,8 @@ export default function App() {
     return (
         <div className="main">
             <form className="header" onSubmit={addTodo}>
-                <input className="title" />
-                <input className="des" />
+                <input className="title" placeholder="Title" />
+                <input className="des" placeholder="Description" />
                 <input type="submit" value="Submit" />
             </form>
             <div className="continer">
