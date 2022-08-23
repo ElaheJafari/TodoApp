@@ -37,6 +37,7 @@ export default function App() {
         setData(newArr)
     }
     function edditeTodo(item) {
+        console.log(item);
         let eddite = window.prompt("")
         let newItem = { ...item, title: eddite }
         let newArr = Data.map((i) => {
@@ -47,6 +48,18 @@ export default function App() {
         })
         setData(newArr)
     }
+
+    function edditDiscription(item ,Discription) {
+        let newItem = { ...item, Discription }
+        let newArr = Data.map((i) => {
+            if (i.id === newItem.id) {
+                return newItem
+            }
+            return i
+        })
+        setData(newArr)
+    }
+
     function Togle(item) {
         let newArr = Data.map((i) => {
             if (i.id === item.id) {
@@ -65,7 +78,7 @@ export default function App() {
             </form>
             <div className="continer">
                 {Data.map((props, index) => {
-                    return <Todo key={index} {...props} Togle={Togle} edditeTodo={edditeTodo} deleteTodo={deleteTodo} />
+                    return <Todo key={index} {...props} edditDiscription={edditDiscription} Togle={Togle} edditeTodo={edditeTodo} deleteTodo={deleteTodo} />
                 })}
 
             </div>
